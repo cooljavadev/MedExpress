@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "59937209-431a-4304-807c-99cecde9b740",
+		"name": "medExpress",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20427800"
+	},
+	"item": [
+		{
+			"name": "createTreatment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Allergy\",\r\n    \"description\": \"Allergy specific --\",\r\n    \"questions\": [{\r\n       \"text\":\"Are you aged between 19 to 40\", \r\n        \"type\": \"boolean\"\r\n    \r\n    },\r\n    {\r\n       \"text\":\"Are you suffering from allergy\", \r\n        \"type\": \"boolean\"  \r\n    },\r\n\t{\r\n       \"text\":\"You are not having symptoms Wheezing, chest tightness, shortness of breath\", \r\n        \"type\": \"boolean\"  \r\n    }]\r\n    \r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/treatment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"treatment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTreatments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/treatments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"treatments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createConsultation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"treatment\": {\r\n        \"treatmentId\": \"51083ae6\",\r\n        \"name\": \"Allergy\",\r\n        \"description\": \"Allergy specific --\",\r\n        \"questions\": [\r\n            {\r\n                \"questionId\": \"4faae2c7\",\r\n                \"text\": \"Are you aged between 19 to 40\",\r\n                \"type\": \"boolean\",\r\n                \"response\": \"yes\"\r\n            },\r\n            {\r\n                \"questionId\": \"806e1ad1\",\r\n                \"text\": \"Are you suffering from allergy\",\r\n                \"type\": \"boolean\",\r\n                \"response\": \"yes\"\r\n            },\r\n            {\r\n                \"questionId\": \"d753a2b5\",\r\n                \"text\": \"You are not having symptoms Wheezing, chest tightness, shortness of breath\",\r\n                \"type\": \"boolean\",\r\n                \"response\": \"yes\"\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/consultation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"consultation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
